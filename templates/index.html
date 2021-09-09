@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume Categorizer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Varela+Round" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="wrapper">
+  <div class="my-container">
+    <h1>Predict Resume category</h1>
+    <h1>Upload resume</h1>
+    Upload in PDF format (Max Size: 5 MB)<br>
+    File will be deleted after prediction
+    <div class="upload-container">
+      <div class="border-container">
+        <form action="{{ url_for('predict')}}" method="POST" enctype="multipart/form-data">
+          <label for="file-upload"><h4>Select a file:</h4></label>
+          <input type="file" id="file-upload" name="file-upload"/>
+          <!-- <p>Drag and drop files here, or 
+            <a href="#" id="file-browser">browse</a> your computer.
+          </p> -->
+          <br>
+          <input class="btn btn-success" type="submit" value="Upload"/>
+        </form>
+      </div>
+    </div>
+    <h2>{{ prediction_text }}<h2>
+  </div>
+</div>
+<!-- partial -->
+<script src='https://use.fontawesome.com/releases/v5.0.10/js/all.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src="../static/js/script.js"></script>
+
+</body>
+</html>
