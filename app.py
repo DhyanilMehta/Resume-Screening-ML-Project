@@ -1,5 +1,5 @@
 import os
-import utils
+import scripts.utils as utils
 from flask import Flask, flash, request, render_template
 from werkzeug.utils import secure_filename
 from werkzeug.exceptions import RequestEntityTooLarge
