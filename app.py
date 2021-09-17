@@ -4,6 +4,9 @@ from flask import Flask, flash, request, render_template
 from werkzeug.utils import secure_filename
 from werkzeug.exceptions import RequestEntityTooLarge
 
+if not os.path.exists('uploads'):
+    os.mkdir('uploads')
+
 UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = {'pdf'}
 
